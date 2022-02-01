@@ -5,3 +5,4 @@
 .. toctree::
     :caption: 金字塔原理2
     :glob:
+    :numbered:

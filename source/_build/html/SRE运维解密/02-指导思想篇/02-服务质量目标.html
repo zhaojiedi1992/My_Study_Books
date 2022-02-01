@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.2. 服务质量目标 &mdash; My_Study_Books v1.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.3. 减少琐事" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html" />
+    <link rel="prev" title="2.1. 拥抱风险" href="01-%E6%8B%A5%E6%8A%B1%E9%A3%8E%E9%99%A9.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> My_Study_Books
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">books</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%861/index.html">金字塔原理1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%862/index.html">金字塔原理2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/index.html">非暴力沟通</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%94%B7%E4%BA%BA%E6%9D%A5%E8%87%AA%E7%81%AB%E6%98%9F%E5%A5%B3%E4%BA%BA%E6%9D%A5%E8%87%AA%E9%87%91%E6%98%9F1/index.html">男人来自火星女人来自金星1</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SRE运维解密</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01-%E6%A6%82%E8%BF%B0%E7%AF%87/index.html">1. 概述篇</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2. 指导思想篇</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01-%E6%8B%A5%E6%8A%B1%E9%A3%8E%E9%99%A9.html">2.1. 拥抱风险</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.2. 服务质量目标</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.2.1. 服务质量术语</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.2.2. 指标在实践中应用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.2.3. 目标在实践中应用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">2.2.4. 协议在实践中应用</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html">2.3. 减少琐事</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html">3. 具体实践篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-%E7%AE%A1%E7%90%86%E7%AF%87/index.html">4. 管理篇</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../SRE%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8C/index.html">SRE工作手册</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">My_Study_Books</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">SRE运维解密</a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">2. </span>指导思想篇</a> &raquo;</li>
+      <li><span class="section-number">2.2. </span>服务质量目标</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/SRE运维解密/02-指导思想篇/02-服务质量目标.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">2.2. </span>服务质量目标<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<section id="id2">
+<h2><span class="section-number">2.2.1. </span>服务质量术语<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt>SLI</dt><dd><p>服务质量指标，该服务的某项服务质量的一个具体量化指标。</p>
+</dd>
+<dt>SLO</dt><dd><p>服务质量目标,定义是sli&lt;目标值或者在一个范围。</p>
+</dd>
+<dt>SLA</dt><dd><p>服务质量协议，描述达到或者木有达到SLO之后的后果。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.2.2. </span>指标在实践中应用<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<section id="id4">
+<h3><span class="section-number">2.2.2.1. </span>运维人员和最终用户各自关心什么<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<p>只有理解用户对系统的真实需求才能真正决定哪些指标是否有用。一般来说4-5个指标具有代表性的指标对系统健康程度的评估和关注就足够了。</p>
+<p>服务分类</p>
+<ul class="simple">
+<li><p>用户可见的服务系统： 可用性，延迟，吞吐量。</p></li>
+<li><p>存储系统： 延迟，可用性，数据持久性。</p></li>
+<li><p>大数据系统： 吞吐量、延迟。</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3><span class="section-number">2.2.2.2. </span>指标的收集<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<p>比如prometheus或者日志采集分析系统。</p>
+</section>
+<section id="id6">
+<h3><span class="section-number">2.2.2.3. </span>汇总<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<p>一般为了简化和数据更可用，需要汇总原始数据。</p>
+</section>
+<section id="id7">
+<h3><span class="section-number">2.2.2.4. </span>指标标准化<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>汇总间隔： 每1分钟汇总一次</p></li>
+<li><p>汇总范围： 集群的全部任务</p></li>
+<li><p>度量频次： 每10s一次</p></li>
+<li><p>包含哪些请求： 黑盒监控发来的http get 请求</p></li>
+<li><p>数据如何获取： 通过监控系统获取服务端信息</p></li>
+<li><p>数据访问延迟： 从收到请求到最后一个字节被发出</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2><span class="section-number">2.2.3. </span>目标在实践中应用<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
+<p>我们应该思考用户最关心的方面入手，而非从现在能度量什么入手。</p>
+<section id="id9">
+<h3><span class="section-number">2.2.3.1. </span>目标的定义<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<p>目标定义demo</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>90% 请求在1ms内完成
+99% 请求在10ms内完成
+99.9% 请求会在100ms内完成
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3><span class="section-number">2.2.3.2. </span>目标的选择<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<p>选择目标不是纯粹的技术指标，而是涉及产品和业务层面的决策的。</p>
+<ul class="simple">
+<li><p>不要仅仅以目前的状态为基础选择目标</p></li>
+<li><p>保持简单</p></li>
+<li><p>避免绝对值</p></li>
+<li><p>SLO越少越好</p></li>
+<li><p>不要过度追求完美</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3><span class="section-number">2.2.3.3. </span>控制手段<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>可以监控并且度量系统的sli</p></li>
+<li><p>比较sli和slo，以决定是否需要执行操作</p></li>
+<li><p>如果需要执行操作，决定什么操作需要被执行，可以满足目标</p></li>
+<li><p>执行操作</p></li>
+</ul>
+<p>比如一个例子</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. 请求延迟上涨
+2. 如果无操作，1h会超出slo范围
+3. cpu是否足够，增加cpu来分散负载
+4. 执行cpu增加操作
+</pre></div>
+</div>
+</section>
+<section id="slo">
+<h3><span class="section-number">2.2.3.4. </span>slo可以建立用户预期<a class="headerlink" href="#slo" title="Permalink to this headline"></a></h3>
+<p>通过公布slo可以设置用户对系统行为的预期。</p>
+</section>
+</section>
+<section id="id12">
+<h2><span class="section-number">2.2.4. </span>协议在实践中应用<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h2>
+<p>起草一份sla需要业务部门和法务部门选择合适的后果条款。SRE在这个过程中是帮助这些部门理解SLA的SLO达标的概率和困难程度。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01-%E6%8B%A5%E6%8A%B1%E9%A3%8E%E9%99%A9.html" class="btn btn-neutral float-left" title="2.1. 拥抱风险" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html" class="btn btn-neutral float-right" title="2.3. 减少琐事" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, zhaojiedi1992@outlook.com.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
