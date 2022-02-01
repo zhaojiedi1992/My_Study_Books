@@ -5,3 +5,7 @@ SRE工作手册
 .. toctree::
     :caption: SRE工作手册
     :glob:
+
+    01-基础篇/index
+    02-实践篇/index
+    03-流程篇/index
