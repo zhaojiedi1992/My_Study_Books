@@ -7,7 +7,7 @@ SRE运维解密
     :glob:
     :numbered:
 
-    01-概述/index
+    01-概述篇/index
     02-指导思想篇/index
     03-具体实践篇/index
     04-管理篇/index
