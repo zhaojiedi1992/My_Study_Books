@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. 流程篇 &mdash; My_Study_Books v1.1 documentation</title>
+  <title>3. 管理篇 &mdash; My_Study_Books v1.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1. 发现运维超负荷并从中恢复" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html" />
-    <link rel="prev" title="2.1. 发现运维超负荷并从中恢复" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/01-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%9C%89%E6%95%88%E6%8A%A5%E8%AD%A6.html" /> 
+    <link rel="next" title="3.1. 迅速培养SRE加入on-call" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html" />
+    <link rel="prev" title="2.1. 基于时间序列数据进行有效报警" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/01-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%9C%89%E6%95%88%E6%8A%A5%E8%AD%A6.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,10 +44,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/index.html">非暴力沟通</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../%E7%94%B7%E4%BA%BA%E6%9D%A5%E8%87%AA%E7%81%AB%E6%98%9F%E5%A5%B3%E4%BA%BA%E6%9D%A5%E8%87%AA%E9%87%91%E6%98%9F1/index.html">男人来自火星女人来自金星1</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">SRE运维解密</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../02-%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3%E7%AF%87/index.html">1. 实践篇</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html">2. 流程篇</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3. 流程篇</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html">3.1. 发现运维超负荷并从中恢复</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-%E6%8C%87%E5%AF%BC%E6%80%9D%E6%83%B3%E7%AF%87/index.html">1. 指导思想篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html">2. 具体实践篇</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. 管理篇</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html">3.1. 迅速培养SRE加入on-call</a></li>
 </ul>
 </li>
 </ul>
@@ -70,7 +70,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">SRE运维解密</a> &raquo;</li>
-      <li><span class="section-number">3. </span>流程篇</li>
+      <li><span class="section-number">3. </span>管理篇</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/SRE运维解密/04-管理篇/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -81,12 +81,12 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1><span class="section-number">3. </span>流程篇<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">3. </span>管理篇<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">流程篇</span></p>
+<p class="caption" role="heading"><span class="caption-text">管理篇</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html">3.1. 发现运维超负荷并从中恢复</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html#id2">3.1.1. 正常负荷到超负荷</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html">3.1. 迅速培养SRE加入on-call</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html#demo">3.1.1. demo</a></li>
 </ul>
 </li>
 </ul>
@@ -97,8 +97,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/01-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%9C%89%E6%95%88%E6%8A%A5%E8%AD%A6.html" class="btn btn-neutral float-left" title="2.1. 发现运维超负荷并从中恢复" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html" class="btn btn-neutral float-right" title="3.1. 发现运维超负荷并从中恢复" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/01-%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%9C%89%E6%95%88%E6%8A%A5%E8%AD%A6.html" class="btn btn-neutral float-left" title="2.1. 基于时间序列数据进行有效报警" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01-%E8%BF%85%E9%80%9F%E5%9F%B9%E5%85%BBSRE%E5%8A%A0%E5%85%A5on-call.html" class="btn btn-neutral float-right" title="3.1. 迅速培养SRE加入on-call" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
