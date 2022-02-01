@@ -5,3 +5,4 @@ SRE运维解密
 .. toctree::
     :caption: SRE运维解密
     :glob:
+    :numbered:
