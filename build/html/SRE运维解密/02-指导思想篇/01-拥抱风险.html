@@ -50,7 +50,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#id2">2.1.1. 管理风险</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">2.1.2. 度量服务风险</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">2.1.3. 服务的风险容忍度</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">2.1.4. 使用错误预算的目的</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">2.1.4. 使用错误预算的目的</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="02-%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E7%9B%AE%E6%A0%87.html">2.2. 拥抱风险</a></li>
@@ -92,28 +92,101 @@
              
   <section id="id1">
 <h1><span class="section-number">2.1. </span>拥抱风险<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<p>极端的可靠性会带来成本的大幅提升，过分追求稳定性限制了新功能的开发速度和产品交付给用户的速度。</p>
+<p>SRE旨在寻求快速创新和高效服务运营之间的风险平衡，而不是简单将服务在线时间最大化。</p>
 <section id="id2">
 <h2><span class="section-number">2.1.1. </span>管理风险<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>可靠性进一步的提升需要的成本并不是线性的。 成本可能来自2个维度</p>
+<ul class="simple">
+<li><p>计算成本： 比如说需要的更多冗余资源。</p></li>
+<li><p>机会成本： 都忙稳定性了， 用户新功能和新产品的工作呢。</p></li>
+</ul>
+<p>SRE管理服务，服务的可靠性很大程度上是通过管理风险来进行的。</p>
+<p>目标是： 明确地将运维风险和业务风险对应进来，努力提高一项服务的可靠性，但不会超过该服务需要的可靠性。</p>
+<p>需要做成本/收益分析的。</p>
 </section>
 <section id="id3">
 <h2><span class="section-number">2.1.2. </span>度量服务风险<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<p>google标准做法是通过一个客观的指标来提现一个待优化的系统属性。</p>
+<p>计划外宕机的度量方法</p>
+<ul class="simple">
+<li><p>基于时间的可用性： 正常时间/(正常时间+ 停机时间)</p></li>
+<li><p>基于次数的可用性： 成功请求数/总的请求数</p></li>
+</ul>
 </section>
 <section id="id4">
 <h2><span class="section-number">2.1.3. </span>服务的风险容忍度<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<p>服务的风险容忍度通常直接根据基本能产品或服务的定义建立的。</p>
+<p>SRE必须和产品负责人一起努力，将一组商业目标转化为明确的可以实现的工程指标。</p>
 <section id="id5">
 <h3><span class="section-number">2.1.3.1. </span>辨别消费者服务的风险容忍度<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
-</section>
+<p>评价服务风险容忍度，有需要考虑的因素，比如：</p>
+<ul class="simple">
+<li><p>需要的可用性水平是什么？</p></li>
+<li><p>不同类型的失败对服务有不同的影响吗？</p></li>
+<li><p>我们如何使用服务成本呢来帮助在风险曲线上定位这个服务？</p></li>
+<li><p>有哪些其他重要的服务指标需要考虑。</p></li>
+</ul>
 <section id="id6">
-<h3><span class="section-number">2.1.3.2. </span>基础设施服务的风险容忍度<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
-</section>
+<h4><span class="section-number">2.1.3.1.1. </span>可用性目标<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h4>
+<p>服务的可用性目标通常取决于提供的功能以及市场上的定位。下面是一些考虑因素。</p>
+<ul class="simple">
+<li><p>用户期望的服务水平是什么</p></li>
+<li><p>是否影响收入</p></li>
+<li><p>收费还是免费</p></li>
+<li><p>有竞争对手吗，对手服务水平如何</p></li>
+<li><p>toB 还是toC</p></li>
+</ul>
 </section>
 <section id="id7">
-<h2><span class="section-number">2.1.4. </span>使用错误预算的目的<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h2>
+<h4><span class="section-number">2.1.3.1.2. </span>故障类型<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h4>
+<p>可以接受计划内的常规服务中断，认为维修窗口中发生的偶然的、正常的、计划之中的故障是可以接受的，这些故障看做计划内停机时间。</p>
+</section>
 <section id="id8">
-<h3><span class="section-number">2.1.4.1. </span>错误预算的构建过程<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<h4><span class="section-number">2.1.3.1.3. </span>成本<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h4>
+<p>成本是一个重要考虑的因素了，需要有对比的。比如下面的</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>可用性目标   99%=&gt;99.9%
+增加的可用性   0.09%
+服务的收入     100万美元
+改进后的价值    100万 * 0.09% =900美元
+
+# 然后比较下需要投入的成本和价值。
+</pre></div>
+</div>
+</section>
 </section>
 <section id="id9">
-<h3><span class="section-number">2.1.4.2. </span>好处<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">2.1.3.2. </span>基础设施服务的风险容忍度<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<p>基本设施服务组件有很多客户，他们都有很多不同的需求。</p>
+<section id="id10">
+<h4><span class="section-number">2.1.3.2.1. </span>可用性目标<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h4>
+<p>可以针对不同目标设置不同稳定性需求。</p>
+</section>
+<section id="id11">
+<h4><span class="section-number">2.1.3.2.2. </span>故障类型<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h4>
+</section>
+<section id="id12">
+<h4><span class="section-number">2.1.3.2.3. </span>成本<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h4>
+<p>可以维护多个集群，对应不同的用户需求。</p>
+</section>
+</section>
+</section>
+<section id="id13">
+<h2><span class="section-number">2.1.4. </span>使用错误预算的目的<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h2>
+<p>开发和运维绩效评估是不同的，SRE的绩效表现取决于可靠性，开发的绩效取决于快速创建代码。</p>
+<p>目标是定义个双方都愿意的客观指标，该指标用来指导谈判方向，一项决策越是基于数据的，一般就越好。</p>
+<section id="id14">
+<h3><span class="section-number">2.1.4.1. </span>错误预算的构建过程<a class="headerlink" href="#id14" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>产品管理层定义一个SLO</p></li>
+<li><p>sli计算系统</p></li>
+<li><p>差值</p></li>
+<li><p>指导</p></li>
+</ol>
+</section>
+<section id="id15">
+<h3><span class="section-number">2.1.4.2. </span>好处<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
+<p>错误预算主要好处是它能够激励产品研发和SRE一起找出创新和可靠性之间合理的平衡点。</p>
 </section>
 </section>
 </section>
