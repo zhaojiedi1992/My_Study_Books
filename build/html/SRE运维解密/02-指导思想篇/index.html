@@ -49,6 +49,7 @@
 <li class="toctree-l3"><a class="reference internal" href="01-%E6%8B%A5%E6%8A%B1%E9%A3%8E%E9%99%A9.html">2.1. 拥抱风险</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02-%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E7%9B%AE%E6%A0%87.html">2.2. 服务质量目标</a></li>
 <li class="toctree-l3"><a class="reference internal" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html">2.3. 减少琐事</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html">2.4. 分布式系统的监控</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html">3. 具体实践篇</a></li>
@@ -138,6 +139,21 @@
 <li class="toctree-l2"><a class="reference internal" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html#id4">2.3.3. 什么算工程工作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html#id5">2.3.4. 琐事繁多是不是一定不好</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html#id6">2.3.5. 小结</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html">2.4. 分布式系统的监控</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id2">2.4.1. 术语描述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id3">2.4.2. 为什么要监控</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id4">2.4.3. 对监控系统设置合理预期</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id5">2.4.4. 现象与原因</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id6">2.4.5. 黑盒监控与白盒监控</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id7">2.4.6. 4个黄金指标</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id8">2.4.7. 关于长尾问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id9">2.4.8. 度量指标采用合适的精度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id10">2.4.9. 简化到不能在简化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id11">2.4.10. 将上述理念整合起来</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id12">2.4.11. 监控系统的长期维护</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%9B%91%E6%8E%A7.html#id13">2.4.12. 小结</a></li>
 </ul>
 </li>
 </ul>

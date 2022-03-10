@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.4. 分布式系统的监控 &mdash; My_Study_Books v1.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. 具体实践篇" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html" />
+    <link rel="prev" title="2.3. 减少琐事" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> My_Study_Books
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">books</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%861/index.html">金字塔原理1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%862/index.html">金字塔原理2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/index.html">非暴力沟通</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E7%94%B7%E4%BA%BA%E6%9D%A5%E8%87%AA%E7%81%AB%E6%98%9F%E5%A5%B3%E4%BA%BA%E6%9D%A5%E8%87%AA%E9%87%91%E6%98%9F1/index.html">男人来自火星女人来自金星1</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SRE运维解密</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../01-%E6%A6%82%E8%BF%B0%E7%AF%87/index.html">1. 概述篇</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">2. 指导思想篇</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01-%E6%8B%A5%E6%8A%B1%E9%A3%8E%E9%99%A9.html">2.1. 拥抱风险</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02-%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%E7%9B%AE%E6%A0%87.html">2.2. 服务质量目标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html">2.3. 减少琐事</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4. 分布式系统的监控</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.4.1. 术语描述</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.4.2. 为什么要监控</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.4.3. 对监控系统设置合理预期</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.4.4. 现象与原因</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.4.5. 黑盒监控与白盒监控</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.4.6. 4个黄金指标</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">2.4.7. 关于长尾问题</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">2.4.8. 度量指标采用合适的精度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">2.4.9. 简化到不能在简化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">2.4.10. 将上述理念整合起来</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">2.4.11. 监控系统的长期维护</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">2.4.12. 小结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html">3. 具体实践篇</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04-%E7%AE%A1%E7%90%86%E7%AF%87/index.html">4. 管理篇</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../SRE%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8C/index.html">SRE工作手册</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">My_Study_Books</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">SRE运维解密</a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">2. </span>指导思想篇</a> &raquo;</li>
+      <li><span class="section-number">2.4. </span>分布式系统的监控</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/SRE运维解密/02-指导思想篇/04-分布式系统的监控.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1><span class="section-number">2.4. </span>分布式系统的监控<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<section id="id2">
+<h2><span class="section-number">2.4.1. </span>术语描述<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt>监控</dt><dd><p>收集处理汇总并且展示关于某个系统的实时量化数据。</p>
+</dd>
+<dt>白盒监控</dt><dd><p>依靠系统内部暴露的一些性能指标进行监控。</p>
+</dd>
+<dt>黑盒监控</dt><dd><p>通过测试某种外部用户可见的系统行为进行监控。</p>
+</dd>
+<dt>监控台页面</dt><dd><p>提供某个服务核心指标一览服务的应用程序。</p>
+</dd>
+<dt>警报</dt><dd><p>目标对象是某个人发现某个系统地址的一个通知。</p>
+</dd>
+<dt>根源问题</dt><dd><p>指系统中的某种缺陷。</p>
+</dd>
+<dt>节点或者机器</dt><dd><p>物理机或者具体运行实例。</p>
+</dd>
+<dt>推送</dt><dd><p>关于某个服务正在运行的软件或者其配置文件的任何改动。</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.4.2. </span>为什么要监控<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>分析长期趋势</p></li>
+<li><p>报警</p></li>
+<li><p>构建监控台页面</p></li>
+<li><p>历史性回溯分析</p></li>
+<li><p>跨时间范围比较</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2><span class="section-number">2.4.3. </span>对监控系统设置合理预期<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+</section>
+<section id="id5">
+<h2><span class="section-number">2.4.4. </span>现象与原因<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
+<p>什么东西出故障了是现象 ， 为什么则表示原因。</p>
+</section>
+<section id="id6">
+<h2><span class="section-number">2.4.5. </span>黑盒监控与白盒监控<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
+<p>黑盒监控是面向现象的，代表目前正在发生的，标识系统现在有故障。</p>
+<p>白盒监控可以检测到即将发生的问题及哪些重试掩盖的问题。</p>
+</section>
+<section id="id7">
+<h2><span class="section-number">2.4.6. </span>4个黄金指标<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>延迟</p></li>
+<li><p>流量</p></li>
+<li><p>错误</p></li>
+<li><p>饱和度</p></li>
+</ul>
+</section>
+<section id="id8">
+<h2><span class="section-number">2.4.7. </span>关于长尾问题<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h2>
+<p>平均值不一定能发现一些长尾问题， 需要使用分位值。</p>
+</section>
+<section id="id9">
+<h2><span class="section-number">2.4.8. </span>度量指标采用合适的精度<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h2>
+<p>高采集周期保留比较短时间， 汇聚数据保留比较长时间。</p>
+</section>
+<section id="id10">
+<h2><span class="section-number">2.4.9. </span>简化到不能在简化<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>哪些最能反映真实故障的规则应该约简单越好，可预测性强，非常可靠。</p></li>
+<li><p>哪些不常用的应该删除</p></li>
+<li></li>
+</ul>
+</section>
+<section id="id11">
+<h2><span class="section-number">2.4.10. </span>将上述理念整合起来<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h2>
+<p>问题的问题</p>
+<ol class="arabic simple">
+<li><p>改规则能否检测到一个当前检测不到的用户可见故障。</p></li>
+<li><p>是否忽略这个报警，如何避免</p></li>
+<li><p>这边警报是否展示用户正在收到影响</p></li>
+<li><p>收到报警是不是必须要进行某个操作。</p></li>
+<li><p>是否其他人收到相关的紧急报警。</p></li>
+</ol>
+<p>深层理念</p>
+<ol class="arabic simple">
+<li><p>每当收到报警，都应该采取某种操作。</p></li>
+<li><p>每个报警都应该是具体可以操作的。</p></li>
+<li><p>每个报警的回复都应该某种智力分析过程</p></li>
+<li><p>每个报警都应该是某个新问题的，不应该是彼此重叠的。</p></li>
+</ol>
+</section>
+<section id="id12">
+<h2><span class="section-number">2.4.11. </span>监控系统的长期维护<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h2>
+</section>
+<section id="id13">
+<h2><span class="section-number">2.4.12. </span>小结<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h2>
+<p>要建立on-call轮值体系，构建一个产品展示当前发生和即将发生的问题进行报警，设置合理目标，保证监控系统可以支持快速
+的问题定位与检测。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03-%E5%87%8F%E5%B0%91%E7%90%90%E4%BA%8B.html" class="btn btn-neutral float-left" title="2.3. 减少琐事" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../03-%E5%85%B7%E4%BD%93%E5%AE%9E%E8%B7%B5%E7%AF%87/index.html" class="btn btn-neutral float-right" title="3. 具体实践篇" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, zhaojiedi1992@outlook.com.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
