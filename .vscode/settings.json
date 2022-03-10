@@ -1,3 +1,5 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}/source"
+    "restructuredtext.confPath": "${workspaceFolder}/source",
+    "esbonio.sphinx.confDir": "/Users/dxm/duxiaoman/github/My_Study_Books/source",
+    "esbonio.server.enabled": true
 }
