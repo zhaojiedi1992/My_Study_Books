@@ -4,8 +4,8 @@
 
 .. toctree::
     :caption: 个人软素质
+    :glob:
     :numbered:
-    :global:
 
     *
     
