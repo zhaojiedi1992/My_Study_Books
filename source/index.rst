@@ -13,3 +13,5 @@ my_study_books 学习笔记
     男人来自火星女人来自金星1/index
     SRE运维解密/index 
     SRE工作手册/index
+    个人软素质/index
+
